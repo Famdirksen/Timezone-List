@@ -7,7 +7,6 @@ use Illuminate\Support\ServiceProvider;
 
 class TimezonelistServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -33,7 +32,7 @@ class TimezonelistServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('timezonelist', function ($app) {
-            return new Timezonelist;
+            return new Timezonelist();
         });
 
         $this->app->booting(function () {
