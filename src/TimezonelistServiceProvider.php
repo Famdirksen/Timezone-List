@@ -1,14 +1,10 @@
-<?php namespace Jackiedo\Timezonelist;
+<?php
+
+namespace Famdirksen\Timezonelist;
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 
-/**
- * TimezonelistServiceProvider
- *
- * @package Jackiedo\Timezonelist
- * @author Jackie Do <anhvudo@gmail.com>
- */
 class TimezonelistServiceProvider extends ServiceProvider
 {
 

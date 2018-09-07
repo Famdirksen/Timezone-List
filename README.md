@@ -8,8 +8,8 @@ Currently, there are some branches of Timezone-List is compatible with the follo
 
 | Timezone-List branch                                          | Laravel version  |
 | ------------------------------------------------------------- | ---------------- |
-| [4.x](https://github.com/JackieDo/Timezone-List/tree/4.x)     | 4.x              |
-| [5.x](https://github.com/JackieDo/Timezone-List/tree/5.x)     | 5.x              |
+| [4.x](https://github.com/Famdirksen/Timezone-List/tree/4.x)     | 4.x              |
+| [5.x](https://github.com/Famdirksen/Timezone-List/tree/5.x)     | 5.x              |
 
 This documentation is use for Laravel 5.x
 
@@ -17,13 +17,13 @@ This documentation is use for Laravel 5.x
 
 You can install this package through [Composer](https://getcomposer.org).
 
-- First, edit your project's `composer.json` file to require `jackiedo/timezonelist`:
+- First, edit your project's `composer.json` file to require `famdirksen/timezonelist`:
 
 ```php
 ...
 "require": {
 	...
-    "jackiedo/timezonelist": "5.*"
+    "famdirksen/timezonelist": "5.*"
 },
 ```
 

@@ -1,14 +1,10 @@
-<?php namespace Jackiedo\Timezonelist;
+<?php
+
+namespace Famdirksen\Timezonelist;
 
 use DateTime;
 use DateTimeZone;
 
-/**
- * The Timezonelist facade.
- *
- * @package Jackiedo\Timezonelist
- * @author Jackie Do <anhvudo@gmail.com>
- */
 class Timezonelist
 {
     /**
@@ -75,7 +71,7 @@ class Timezonelist
      * @param mixed $attr
      * @return string
      **/
-    public function create($name, $selected='', $attr='')
+    public function create($name, $selected = '', $attr = '')
     {
 
         // Attributes for select element
