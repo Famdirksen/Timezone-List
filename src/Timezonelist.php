@@ -8,12 +8,12 @@ use DateTimeZone;
 class Timezonelist
 {
     /**
-     * Whitespace seperate
+     * Whitespace seperate.
      */
     const WHITESPACE_SEP = '&nbsp;&nbsp;&nbsp;&nbsp;';
 
     /**
-     * Popular timezones
+     * Popular timezones.
      *
      * @var array
      */
@@ -23,7 +23,7 @@ class Timezonelist
     ];
 
     /**
-     * All continents of the world
+     * All continents of the world.
      *
      * @var array
      */
@@ -37,14 +37,14 @@ class Timezonelist
         'Australia'  => DateTimeZone::AUSTRALIA,
         'Europe'     => DateTimeZone::EUROPE,
         'Indian'     => DateTimeZone::INDIAN,
-        'Pacific'    => DateTimeZone::PACIFIC
+        'Pacific'    => DateTimeZone::PACIFIC,
     ];
 
     /**
-     * Format to display timezones
+     * Format to display timezones.
      *
-     * @param  string $timezone
-     * @param  string $continent
+     * @param string $timezone
+     * @param string $continent
      *
      * @return string
      */
@@ -59,16 +59,18 @@ class Timezonelist
         $timezone = str_replace('St_', 'St. ', $timezone);
         $timezone = str_replace('_', ' ', $timezone);
 
-        $formatted = '(GMT/UTC' . $offset . ')' . self::WHITESPACE_SEP . $timezone;
+        $formatted = '(GMT/UTC'.$offset.')'.self::WHITESPACE_SEP.$timezone;
+
         return $formatted;
     }
 
     /**
-     * Create a GMT timezone select element for form
+     * Create a GMT timezone select element for form.
      *
      * @param string $name
      * @param string $selected
-     * @param mixed $attr
+     * @param mixed  $attr
+     *
      * @return string
      **/
     public function create($name, $selected = '', $attr = '')
@@ -79,21 +81,21 @@ class Timezonelist
         if (!empty($attr)) {
             if (is_array($attr)) {
                 foreach ($attr as $attr_name => $attr_value) {
-                    $attrSet .= ' ' .$attr_name. '="' .$attr_value. '"';
+                    $attrSet .= ' '.$attr_name.'="'.$attr_value.'"';
                 }
             } else {
-                $attrSet = ' ' .$attr;
+                $attrSet = ' '.$attr;
             }
         }
 
         // start select element
-        $listbox = '<select name="' .$name. '"' .$attrSet. '>';
+        $listbox = '<select name="'.$name.'"'.$attrSet.'>';
 
         // Add popular timezones
         $listbox .= '<optgroup label="General">';
         foreach ($this->popularTimezones as $key => $value) {
             $selected_attr = ($selected == $key) ? ' selected="selected"' : '';
-            $listbox .= '<option value="' .$key. '"' .$selected_attr. '>' .$value. '</option>';
+            $listbox .= '<option value="'.$key.'"'.$selected_attr.'>'.$value.'</option>';
         }
         $listbox .= '</optgroup>';
 
@@ -102,13 +104,13 @@ class Timezonelist
             $timezones = DateTimeZone::listIdentifiers($mask);
 
             // start optgroup tag
-            $listbox .= '<optgroup label="' .$continent. '">';
+            $listbox .= '<optgroup label="'.$continent.'">';
 
             // create option tags
             foreach ($timezones as $timezone) {
                 $selected_attr = ($selected == $timezone) ? ' selected="selected"' : '';
 
-                $listbox .= '<option value="' .$timezone. '"' .$selected_attr. '>';
+                $listbox .= '<option value="'.$timezone.'"'.$selected_attr.'>';
                 $listbox .= $this->formatTimezone($timezone, $continent);
                 $listbox .= '</option>';
             }
@@ -124,7 +126,7 @@ class Timezonelist
     }
 
     /**
-     * Create a timezone array
+     * Create a timezone array.
      *
      * @return mixed
      **/
