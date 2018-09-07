@@ -142,6 +142,7 @@ class Timezonelist
         // Add all timezone of continents to list
         foreach ($this->continents as $continent => $mask) {
             $timezones = DateTimeZone::listIdentifiers($mask);
+
             foreach ($timezones as $timezone) {
                 $list[$continent][$timezone] = $this->formatTimezone($timezone, $continent);
             }

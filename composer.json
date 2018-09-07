@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Famdirksen\\Timezonelist\\": "src/Famdirksen/Timezonelist"
+            "Famdirksen\\Timezonelist\\": "src"
         }
     },
     "minimum-stability": "stable",
@@ -28,7 +28,7 @@
                 "Famdirksen\\Timezonelist\\TimezonelistServiceProvider"
             ],
             "aliases": {
-                "Debugbar": "Famdirksen\\Timezonelist\\Facades\\Timezonelist"
+                "Timezonelist": "Famdirksen\\Timezonelist\\Facades\\Timezonelist"
             }
         }
     }

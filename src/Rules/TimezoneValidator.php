@@ -26,12 +26,12 @@ class TimezoneValidator implements Rule
      */
     public function passes($attribute, $value)
     {
-        $timezone_list = Timezonelist::toArray();
+        $timezone_lists = (new Timezonelist())->toArray();
 
-        dd($timezone_list);
-
-        if(in_array($value, $timezone_list)) {
-            return true;
+        foreach($timezone_lists as $timezone_list) {
+            if (array_key_exists($value, $timezone_list)) {
+                return true;
+            }
         }
 
         return false;

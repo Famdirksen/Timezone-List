@@ -549,5 +549,20 @@ Example in Laravel:
 $timezone_list = Timezonelist::toArray();
 ```
 
+
+###### 3. Validator usage
+
+For validating a request if the timezone is correct you can use our Laravel Validation Rule.
+
+```php
+$this->validate($request,
+    [
+        'my-timezone-field' => ['required', new \Famdirksen\Timezonelist\Rules\TimezoneValidator]
+    ]
+);
+```
+
+
+
 # Thanks for use
 Hopefully, this package is useful to you.
