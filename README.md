@@ -20,9 +20,7 @@ You can install this package through [Composer](https://getcomposer.org).
 - First, edit your project's `composer.json` file to require `famdirksen/timezonelist`:
 
 ```php
-...
 "require": {
-	...
     "famdirksen/timezonelist": "5.*"
 },
 ```
@@ -30,17 +28,17 @@ You can install this package through [Composer](https://getcomposer.org).
 - Next, update Composer from the Terminal:
 
 ```shell
-$ composer update
+composer update
 ```
 
 - Once update operation completes, the final step is to add the service provider. Open `config/app.php`, and add a new item to the providers array:
 
 ```php
 ...
-'providers' => array(
+'providers' => [
     ...
     Famdirksen\Timezonelist\TimezonelistServiceProvider::class,
-),
+],
 ```
 
 # Usage
@@ -555,13 +553,13 @@ $timezone_list = Timezonelist::toArray();
 For validating a request if the timezone is correct you can use our Laravel Validation Rule.
 
 ```php
-$this->validate($request,
-    [
-        'my-timezone-field' => ['required', new \Famdirksen\Timezonelist\Rules\TimezoneValidator]
+$this->validate($request, [
+    'my-timezone-field' => [
+        'required', 
+	new \Famdirksen\Timezonelist\Rules\TimezoneValidator
     ]
-);
+]);
 ```
-
 
 
 # Thanks for use
