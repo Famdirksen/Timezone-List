@@ -20,15 +20,16 @@ class TimezoneValidator implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param  string  $attribute
-     * @param  mixed  $value
+     * @param string $attribute
+     * @param mixed  $value
+     *
      * @return bool
      */
     public function passes($attribute, $value)
     {
         $timezone_lists = (new Timezonelist())->toArray();
 
-        foreach($timezone_lists as $timezone_list) {
+        foreach ($timezone_lists as $timezone_list) {
             if (array_key_exists($value, $timezone_list)) {
                 return true;
             }
